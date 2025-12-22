@@ -2,8 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'maven-publish'
 
-// Apply Compose Compiler plugin for Kotlin 2.0+
-apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+// Apply Compose Compiler plugin - required for Kotlin 2.0+
+// For Kotlin 1.x, this will be a no-op if plugin not found
+try {
+  apply plugin: 'org.jetbrains.kotlin.plugin.compose'
+} catch (Exception e) {
+  // Plugin not available, likely Kotlin < 2.0
+  logger.info("Compose compiler plugin not applied: ${e.message}")
+}
 
 group = 'expo.modules.liquidglass'
 version = '0.1.0'
@@ -18,6 +24,12 @@ def safeExtGet(prop, fallback) {
   rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
 }
 
+// Get Kotlin version
+def kotlinVersionStr = safeExtGet('kotlinVersion', '1.9.0')
+def kotlinVersionParts = kotlinVersionStr.toString().tokenize('.')
+def kotlinMajor = kotlinVersionParts[0].toInteger()
+def isKotlin2Plus = kotlinMajor >= 2
+
 android {
   namespace "expo.modules.liquidglass"
 
@@ -30,6 +42,13 @@ android {
 
   buildFeatures {
     compose true
+  }
+
+  // For Kotlin 1.x, we need composeOptions
+  if (!isKotlin2Plus) {
+    composeOptions {
+      kotlinCompilerExtensionVersion = "1.5.14"
+    }
   }
 
   publishing {
