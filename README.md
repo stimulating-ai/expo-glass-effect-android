@@ -26,18 +26,10 @@ This package brings the beautiful liquid glass morphism effect to your React Nat
 ## Installation
 
 ```bash
-npx expo install expo-glass-effect-android
-```
-
-Or with npm/yarn:
-
-```bash
-npm install expo-glass-effect-android
+npm install github:stimulating-ai/expo-glass-effect-android
 # or
-yarn add expo-glass-effect-android
+yarn add github:stimulating-ai/expo-glass-effect-android
 ```
-
-### Expo Config Plugin (Required)
 
 Add the plugin to your `app.json` or `app.config.js`:
 
