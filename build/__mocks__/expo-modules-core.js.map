@@ -1,0 +1,1 @@
+{"version":3,"file":"expo-modules-core.js","sourceRoot":"","sources":["../../src/__mocks__/expo-modules-core.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,MAAM,wBAAwB,GAAG,IAAI,CAAC,EAAE,CAAC,GAAG,EAAE,CAAC,IAAI,CAAC,CAAC","sourcesContent":["export const requireNativeViewManager = jest.fn(() => null);\n"]}

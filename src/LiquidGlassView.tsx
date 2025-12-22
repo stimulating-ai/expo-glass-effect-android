@@ -1,6 +1,6 @@
 import { requireNativeViewManager } from 'expo-modules-core';
 import * as React from 'react';
-import { Platform, View, StyleSheet } from 'react-native';
+import { Platform, View } from 'react-native';
 
 import type { LiquidGlassViewProps } from './ExpoLiquidGlass.types';
 
