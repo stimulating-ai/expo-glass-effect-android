@@ -1,4 +1,4 @@
-# expo-liquid-glass
+# expo-glass-effect-android
 
 Liquid glass effect for React Native / Expo using [AndroidLiquidGlass (Backdrop)](https://github.com/Kyant0/AndroidLiquidGlass).
 
@@ -26,15 +26,15 @@ This package brings the beautiful liquid glass morphism effect to your React Nat
 ## Installation
 
 ```bash
-npx expo install expo-liquid-glass
+npx expo install expo-glass-effect-android
 ```
 
 Or with npm/yarn:
 
 ```bash
-npm install expo-liquid-glass
+npm install expo-glass-effect-android
 # or
-yarn add expo-liquid-glass
+yarn add expo-glass-effect-android
 ```
 
 ### Expo Config Plugin (Required)
@@ -44,7 +44,7 @@ Add the plugin to your `app.json` or `app.config.js`:
 ```json
 {
   "expo": {
-    "plugins": ["expo-liquid-glass"]
+    "plugins": ["expo-glass-effect-android"]
   }
 }
 ```
@@ -59,7 +59,7 @@ npx expo run:android
 ## Usage
 
 ```tsx
-import { LiquidGlassProvider, LiquidGlassView } from 'expo-liquid-glass';
+import { LiquidGlassProvider, LiquidGlassView } from 'expo-glass-effect-android';
 
 function App() {
   return (

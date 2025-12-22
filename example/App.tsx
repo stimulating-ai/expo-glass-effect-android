@@ -7,7 +7,7 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import { LiquidGlassProvider, LiquidGlassView } from 'expo-liquid-glass';
+import { LiquidGlassProvider, LiquidGlassView } from 'expo-glass-effect-android';
 
 const { width } = Dimensions.get('window');
 

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-liquid-glass-example",
-    "slug": "expo-liquid-glass-example",
+    "name": "expo-glass-effect-android-example",
+    "slug": "expo-glass-effect-android-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,7 +19,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1a1a2e"
       },
-      "package": "com.example.expoliquidglass"
+      "package": "com.example.expoglasseffectandroid"
     },
     "plugins": [
       "../app.plugin.js"
