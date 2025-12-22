@@ -1,0 +1,49 @@
+{
+  "name": "expo-glass-effect-android",
+  "version": "0.1.0",
+  "description": "Liquid glass effect for React Native / Expo using AndroidLiquidGlass (Backdrop)",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "expo-module build",
+    "build:plugin": "tsc --project plugin",
+    "clean": "expo-module clean",
+    "lint": "expo-module lint",
+    "test": "expo-module test",
+    "prepare": "expo-module prepare && npm run build:plugin",
+    "prepublishOnly": "expo-module prepublishOnly",
+    "expo-module": "expo-module"
+  },
+  "keywords": [
+    "react-native",
+    "expo",
+    "android",
+    "liquid-glass",
+    "blur",
+    "glass-morphism",
+    "backdrop"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stimulating-ai/expo-glass-effect-android"
+  },
+  "bugs": {
+    "url": "https://github.com/stimulating-ai/expo-glass-effect-android/issues"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/stimulating-ai/expo-glass-effect-android#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@expo/config-plugins": "^8.0.0",
+    "@types/react": "^18.2.0",
+    "expo-module-scripts": "^4.0.0",
+    "expo-modules-core": "^2.0.0",
+    "typescript": "^5.0.0"
+  },
+  "peerDependencies": {
+    "expo": "*",
+    "react": "*",
+    "react-native": "*"
+  }
+}
