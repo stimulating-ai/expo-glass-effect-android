@@ -1,33 +1,12 @@
-// Detect Kotlin version early for buildscript
+plugins {
+  id 'com.android.library'
+  id 'kotlin-android'
+  id 'maven-publish'
+  id 'org.jetbrains.kotlin.plugin.compose'
+}
+
 def safeExtGet(prop, fallback) {
   rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
-}
-
-def kotlinVersionStr = safeExtGet('kotlinVersion', '1.9.0')
-def kotlinVersionParts = kotlinVersionStr.toString().tokenize('.')
-def kotlinMajor = kotlinVersionParts[0].toInteger()
-def isKotlin2Plus = kotlinMajor >= 2
-
-// For Kotlin 2.0+, add compose compiler plugin to buildscript classpath
-if (isKotlin2Plus) {
-  buildscript {
-    repositories {
-      mavenCentral()
-      google()
-    }
-    dependencies {
-      classpath "org.jetbrains.kotlin:compose-compiler-gradle-plugin:${kotlinVersionStr}"
-    }
-  }
-}
-
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'maven-publish'
-
-// Apply compose compiler plugin for Kotlin 2.0+
-if (isKotlin2Plus) {
-  apply plugin: 'org.jetbrains.kotlin.plugin.compose'
 }
 
 group = 'expo.modules.liquidglass'
@@ -51,13 +30,6 @@ android {
 
   buildFeatures {
     compose true
-  }
-
-  // For Kotlin 1.x, we need composeOptions with compiler extension version
-  if (!isKotlin2Plus) {
-    composeOptions {
-      kotlinCompilerExtensionVersion = "1.5.14"
-    }
   }
 
   publishing {
