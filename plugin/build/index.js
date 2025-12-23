@@ -17,7 +17,7 @@ const withLiquidGlass = (config) => {
                 // This is required for Kotlin 2.0+
                 const pluginManagementRegex = /pluginManagement\s*\{[\s\S]*?plugins\s*\{/;
                 if (pluginManagementRegex.test(contents)) {
-                    contents = contents.replace(pluginManagementRegex, (match) => `${match}\n        id("org.jetbrains.kotlin.plugin.compose") version "2.1.20" apply false`);
+                    contents = contents.replace(pluginManagementRegex, (match) => `${match}\n        id("org.jetbrains.kotlin.plugin.compose") version "2.0.21" apply false`);
                 }
             }
             config.modResults.contents = contents;
@@ -33,7 +33,7 @@ const withLiquidGlass = (config) => {
                 // Try to add to plugins block
                 const pluginsBlockRegex = /plugins\s*\{/;
                 if (pluginsBlockRegex.test(contents)) {
-                    contents = contents.replace(pluginsBlockRegex, `plugins {\n    id("org.jetbrains.kotlin.plugin.compose") version "2.1.20" apply false`);
+                    contents = contents.replace(pluginsBlockRegex, `plugins {\n    id("org.jetbrains.kotlin.plugin.compose") version "2.0.21" apply false`);
                 }
             }
             config.modResults.contents = contents;

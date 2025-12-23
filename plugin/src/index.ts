@@ -23,7 +23,7 @@ const withLiquidGlass: ConfigPlugin = (config) => {
         if (pluginManagementRegex.test(contents)) {
           contents = contents.replace(
             pluginManagementRegex,
-            (match) => `${match}\n        id("org.jetbrains.kotlin.plugin.compose") version "2.1.20" apply false`
+            (match) => `${match}\n        id("org.jetbrains.kotlin.plugin.compose") version "2.0.21" apply false`
           );
         }
       }
@@ -45,7 +45,7 @@ const withLiquidGlass: ConfigPlugin = (config) => {
         if (pluginsBlockRegex.test(contents)) {
           contents = contents.replace(
             pluginsBlockRegex,
-            `plugins {\n    id("org.jetbrains.kotlin.plugin.compose") version "2.1.20" apply false`
+            `plugins {\n    id("org.jetbrains.kotlin.plugin.compose") version "2.0.21" apply false`
           );
         }
       }
